@@ -31,8 +31,12 @@ class BaseDocument:
         """Renames the document"""
         if not os.path.exists(self.file_path):
             raise NotExistError(self.file_name)
-        os.rename(self.file_path, os.path.join(os.path.dirname(self.file_path), new_name))
-        
+
+        new_path = os.path.join(os.path.dirname(self.file_path), new_name)
+        os.rename(self.file_path, new_path)
+        self.file_path = new_path
+        self.file_name = new_name
+
     
     
     def delete(self):
