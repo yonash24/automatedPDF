@@ -1,8 +1,7 @@
 import os
 import datetime
 import pdfplumber
-import json
-import hashlib
+
 
 
 class BaseDocument:
